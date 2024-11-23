@@ -47,12 +47,12 @@ Displays detailed information about the selected sample.
 Fetches metadata from the dataset and formats it as "KEY: VALUE" pairs in the panel.
 ##### 2.	Visualizations
 ###### Bubble Chart:
-	Shows OTU distributions for the selected sample.
-	OTU IDs are mapped to the x-axis, sample values to the y-axis, and hover text to OTU labels.
-	Marker size corresponds to sample values, and colors are based on OTU IDs.
+Shows OTU distributions for the selected sample.
+OTU IDs are mapped to the x-axis, sample values to the y-axis, and hover text to OTU labels.
+Marker size corresponds to sample values, and colors are based on OTU IDs.
 ###### Bar Chart:
-	Displays the top 10 OTUs for the selected sample.
-	Values are presented in descending order with labels formatted as OTU {id}.
+Displays the top 10 OTUs for the selected sample.
+Values are presented in descending order with labels formatted as OTU {id}.
 ##### 3.Dynamic Dropdown Menu
 Populates a dropdown menu with sample IDs (data.names).
 Allows users to select a sample, triggering the dashboard to update.
@@ -63,70 +63,65 @@ Fetches data from a JSON file hosted at https://static.bc-edx.com/data/dl-1-2/m1
 Extracts relevant fields like otu_ids, otu_labels, and sample_values for chart rendering.
 ##### 6.	Initialization
 On page load, the file:
-	Fetches the data.
-	Populates the dropdown menu with sample IDs.
-	Initializes the dashboard with the first sample's data.
+Fetches the data.
+Populates the dropdown menu with sample IDs.
+Initializes the dashboard with the first sample's data.
 #### Flow of Operations
 ###### 1.	Initialization (init)
-o	Fetches data.
-o	Populates the dropdown with sample IDs.
-o	Build the initial metadata panel and charts for the default sample.
+Fetches data.
+Populates the dropdown with sample IDs.
+Build the initial metadata panel and charts for the default sample.
 ##### 2.	User Interaction (option Changed)
-o	Triggered when the user selects a new sample.
-o	Updates the metadata panel and charts with data from the selected sample.
+Triggered when the user selects a new sample.
+Updates the metadata panel and charts with data from the selected sample.
 ##### 3.	Chart and Metadata Building
-o	buildCharts(sample): Constructs the bubble and bar charts.
-o	buildMetadata(sample): Updates the metadata panel.
+buildCharts(sample): Constructs the bubble and bar charts.
+buildMetadata(sample): Updates the metadata panel.
 In essence, this file powers a fully interactive dashboard that allows users to explore microbiome data through engaging visualizations and metadata
-### The samples.json 
+## The samples.json 
 file contains the microbiome dataset, structured into three key components:
 ### 1.	names:
 A list of sample IDs, such as "940", "941", "943", etc., corresponding to individual samples.
 ### 2.	metadata:
 A list of objects containing demographic and experimental details for each sample.
 Example fields:
-	id: Sample ID.
-	ethnicity: Participant's ethnicity.
-	gender: Participant's gender.
-	age: Participant's age.
-	location: Location of the participant.
-	bbtype: Belly button type (I/O).
-	wfreq: Washing frequency (weekly).
+id: Sample ID.
+ethnicity: Participant's ethnicity.
+gender: Participant's gender.
+age: Participant's age.
+location: Location of the participant.
+bbtype: Belly button type (I/O).
+wfreq: Washing frequency (weekly).
 #### 3.	samples:
-o	A list of objects detailing the microbiome composition for each sample.
-o	Example fields:
-	id: Sample ID.
-	otu_ids: Array of OTU (Operational Taxonomic Unit) IDs detected in the sample.
-	sample_values: Abundance values corresponding to each OTU ID.
-	otu_labels: Taxonomic information or descriptive labels for each OTU.
+A list of objects detailing the microbiome composition for each sample.
+Example fields:
+id: Sample ID.
+otu_ids: Array of OTU (Operational Taxonomic Unit) IDs detected in the sample.
+sample_values: Abundance values corresponding to each OTU ID.
+otu_labels: Taxonomic information or descriptive labels for each OTU.
 This file serves as the data source for the dashboard, linking sample IDs with their metadata and microbial compositions for visualization in the charts and metadata panel. Let me know if you'd like to analyze or modify this data further!
 The index.html file sets up the structure and layout for the Belly Button Biodiversity Dashboard. Here's what it does:
 ### Purpose:
 This HTML file creates the foundation for the dashboard's interface, linking the interactive features to the external JavaScript file (app.js) and rendering visualizations using the Plotly and D3 libraries. It is the user-facing component where data is displayed and explored.
 ### Key Components
 #### 1.	Header Section
-o	Title: Displays the dashboard's name: "Belly Button Biodiversity Dashboard."
-o	Description: Brief instruction: "Use the interactive charts below to explore the dataset."
+Title: Displays the dashboard's name: "Belly Button Biodiversity Dashboard."
+Description: Brief instruction: "Use the interactive charts below to explore the dataset."
 ### 2.	Dropdown Menu
-o	Located inside a card in the left column.
-o	Populates dynamically with sample IDs using JavaScript.
-o	Triggers data updates when a new sample is selected via the onchange="optionChanged(this.value)" attribute.
+Located inside a card in the left column.
+Populates dynamically with sample IDs using JavaScript.
+Triggers data updates when a new sample is selected via the onchange="optionChanged(this.value)" attribute.
 ### 3.	Demographic Information Panel
-o	A card labeled "Demographic Info" that dynamically displays metadata for the selected sample.
-o	Uses the <div> with id="sample-metadata" as a container.
+A card labeled "Demographic Info" that dynamically displays metadata for the selected sample.
+Uses the <div> with id="sample-metadata" as a container.
 ### 4.	Visualizations
-o	Bar Chart: Renders in the <div> with id="bar" to display the top 10 OTUs for the selected sample.
-o	Bubble Chart: Renders in the <div> with id="bubble" to visualize the OTU distribution for the selected sample.
+Bar Chart: Renders in the <div> with id="bar" to display the top 10 OTUs for the selected sample.
+Bubble Chart: Renders in the <div> with id="bubble" to visualize the OTU distribution for the selected sample.
 ### 5.	Responsive Layout
-o	Uses Bootstrap for a grid-based, responsive design:
-	Left Column (3/12 width): Dropdown and metadata panel.
-	Right Column (9/12 width): Bar chart visualization.
-	Full-width row for the bubble chart.
-### 6.	Linked Libraries
-o	Bootstrap: For styling and responsive layout (bootstrap.min.css).
-o	D3.js: For data manipulation and interaction (d3.v7.min.js).
-o	Plotly.js: For creating charts (plotly-latest.min.js).
-o	app.js: Executes the interactive functionality of the dashboard.
+Uses Bootstrap for a grid-based, responsive design:
+Left Column (3/12 width): Dropdown and metadata panel.
+Right Column (9/12 width): Bar chart visualization.
+Full-width row for the bubble chart.
 This HTML file provides scaffolding for the interactive OTU dashboard, ensuring the dropdown, metadata panel, and visualizations are displayed in a user-friendly and organized way. 
-### Conclusion:
+## Conclusion:
 The Belly Button Biodiversity Dashboard provides an intuitive platform for exploring microbiome data interactively. By combining a dynamic front-end with robust data handling, it empowers users to delve into biological insights with ease. The project is well-suited for researchers, educators, and enthusiasts looking to visualize complex microbiological dataset.This dashboard's modular design and extensibility offer opportunities for future enhancements, such as additional filtering options, new visualization types, or integration with real-time data sources. Whether used for scientific exploration or education, the application demonstrates the power of modern web technologies in making data accessible and engaging.
