@@ -39,7 +39,7 @@ The JavaScript file constructs visualizations dynamically using Plotly, integrat
 #### Components Breakdown
 ## app.js
 The JavaScript file (app.js) implements the core logic for creating and managing an interactive OTU Dashboard.
-Purpose
+#### Purpose
 The file facilitates dynamic visualization of microbiome data by fetching JSON data from an external source and updating the web interface in response to user interactions. It enables users to explore sample-specific metadata, view the top 10 OTUs in a bar chart, and analyze OTU distributions in a bubble chart.
 ### Key Functionalities
 ##### 1.	Metadata Panel
@@ -77,6 +77,7 @@ Updates the metadata panel and charts with data from the selected sample.
 ##### 3.	Chart and Metadata Building
 buildCharts(sample): Constructs the bubble and bar charts.
 buildMetadata(sample): Updates the metadata panel.
+
 In essence, this file powers a fully interactive dashboard that allows users to explore microbiome data through engaging visualizations and metadata
 ## The samples.json 
 file contains the microbiome dataset, structured into three key components:
@@ -101,23 +102,23 @@ sample_values: Abundance values corresponding to each OTU ID.
 otu_labels: Taxonomic information or descriptive labels for each OTU.
 This file serves as the data source for the dashboard, linking sample IDs with their metadata and microbial compositions for visualization in the charts and metadata panel. Let me know if you'd like to analyze or modify this data further!
 The index.html file sets up the structure and layout for the Belly Button Biodiversity Dashboard. Here's what it does:
-### Purpose:
+#### Purpose:
 This HTML file creates the foundation for the dashboard's interface, linking the interactive features to the external JavaScript file (app.js) and rendering visualizations using the Plotly and D3 libraries. It is the user-facing component where data is displayed and explored.
-### Key Components
-#### 1.	Header Section
+#### Key Components
+##### 1.	Header Section
 Title: Displays the dashboard's name: "Belly Button Biodiversity Dashboard."
 Description: Brief instruction: "Use the interactive charts below to explore the dataset."
-### 2.	Dropdown Menu
+##### 2.	Dropdown Menu
 Located inside a card in the left column.
 Populates dynamically with sample IDs using JavaScript.
 Triggers data updates when a new sample is selected via the onchange="optionChanged(this.value)" attribute.
-### 3.	Demographic Information Panel
+##### 3.	Demographic Information Panel
 A card labeled "Demographic Info" that dynamically displays metadata for the selected sample.
 Uses the <div> with id="sample-metadata" as a container.
-### 4.	Visualizations
+##### 4.	Visualizations
 Bar Chart: Renders in the <div> with id="bar" to display the top 10 OTUs for the selected sample.
 Bubble Chart: Renders in the <div> with id="bubble" to visualize the OTU distribution for the selected sample.
-### 5.	Responsive Layout
+##### 5.	Responsive Layout
 Uses Bootstrap for a grid-based, responsive design:
 Left Column (3/12 width): Dropdown and metadata panel.
 Right Column (9/12 width): Bar chart visualization.
