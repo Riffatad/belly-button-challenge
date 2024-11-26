@@ -100,7 +100,8 @@ id: Sample ID.
 otu_ids: Array of OTU (Operational Taxonomic Unit) IDs detected in the sample.
 sample_values: Abundance values corresponding to each OTU ID.
 otu_labels: Taxonomic information or descriptive labels for each OTU.
-This file serves as the data source for the dashboard, linking sample IDs with their metadata and microbial compositions for visualization in the charts and metadata panel. Let me know if you'd like to analyze or modify this data further!
+This file serves as the data source for the dashboard, linking sample IDs with their metadata and microbial compositions for visualization in the charts and metadata panel.
+## THE INDEX.HTML
 The index.html file sets up the structure and layout for the Belly Button Biodiversity Dashboard. Here's what it does:
 ##### Purpose:
 This HTML file creates the foundation for the dashboard's interface, linking the interactive features to the external JavaScript file (app.js) and rendering visualizations using the Plotly and D3 libraries. It is the user-facing component where data is displayed and explored.
