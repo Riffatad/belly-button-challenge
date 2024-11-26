@@ -79,7 +79,7 @@ buildCharts(sample): Constructs the bubble and bar charts.
 buildMetadata(sample): Updates the metadata panel.
 
 In essence, this file powers a fully interactive dashboard that allows users to explore microbiome data through engaging visualizations and metadata
-## The samples.json 
+## samples.json 
 file contains the microbiome dataset, structured into three key components:
 ##### 1.	names:
 A list of sample IDs, such as "940", "941", "943", etc., corresponding to individual samples.
