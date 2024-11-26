@@ -81,9 +81,9 @@ buildMetadata(sample): Updates the metadata panel.
 In essence, this file powers a fully interactive dashboard that allows users to explore microbiome data through engaging visualizations and metadata
 ## The samples.json 
 file contains the microbiome dataset, structured into three key components:
-### 1.	names:
+##### 1.	names:
 A list of sample IDs, such as "940", "941", "943", etc., corresponding to individual samples.
-### 2.	metadata:
+##### 2.	metadata:
 A list of objects containing demographic and experimental details for each sample.
 Example fields:
 id: Sample ID.
@@ -93,7 +93,7 @@ age: Participant's age.
 location: Location of the participant.
 bbtype: Belly button type (I/O).
 wfreq: Washing frequency (weekly).
-#### 3.	samples:
+##### 3.	samples:
 A list of objects detailing the microbiome composition for each sample.
 Example fields:
 id: Sample ID.
@@ -102,7 +102,7 @@ sample_values: Abundance values corresponding to each OTU ID.
 otu_labels: Taxonomic information or descriptive labels for each OTU.
 This file serves as the data source for the dashboard, linking sample IDs with their metadata and microbial compositions for visualization in the charts and metadata panel. Let me know if you'd like to analyze or modify this data further!
 The index.html file sets up the structure and layout for the Belly Button Biodiversity Dashboard. Here's what it does:
-#### Purpose:
+##### Purpose:
 This HTML file creates the foundation for the dashboard's interface, linking the interactive features to the external JavaScript file (app.js) and rendering visualizations using the Plotly and D3 libraries. It is the user-facing component where data is displayed and explored.
 #### Key Components
 ##### 1.	Header Section
